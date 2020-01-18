@@ -72,28 +72,3 @@ val EclipseModel.factorypath: EclipseFactorypath
 
 fun EclipseModel.factorypath(configure: EclipseFactorypath.() -> Unit): Unit =
     (this as ExtensionAware).configure(configure)
-
-// IDEA
-
-val IdeaModule.apt: AptIdeaPlugin.ModuleApt
-    get() = (this as ExtensionAware).the()
-
-fun IdeaModule.apt(configure: AptIdeaPlugin.ModuleApt.() -> Unit): Unit =
-    (this as ExtensionAware).configure(configure)
-
-inline
-var AptIdeaPlugin.ModuleApt.addGeneratedSourcesDirs: Boolean
-    get() = isAddGeneratedSourcesDirs
-    set(value) {
-        isAddGeneratedSourcesDirs = value
-    }
-inline
-var AptIdeaPlugin.ModuleApt.addAptDependencies: Boolean
-    get() = isAddAptDependencies
-    set(value) {
-        isAddAptDependencies = value
-    }
-
-var IdeaProject.configureAnnotationProcessing: Boolean
-    get() = withConvention(AptIdeaPlugin.ProjectAptConvention::class) { isConfigureAnnotationProcessing }
-    set(value) = withConvention(AptIdeaPlugin.ProjectAptConvention::class) { isConfigureAnnotationProcessing = value }

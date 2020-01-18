@@ -80,7 +80,6 @@ tasks {
         dependsOn("publishPluginMavenPublicationToTestRepository")
         dependsOn("publishAptPluginMarkerMavenPublicationToTestRepository")
         dependsOn("publishAptEclipsePluginMarkerMavenPublicationToTestRepository")
-        dependsOn("publishAptIdeaPluginMarkerMavenPublicationToTestRepository")
     }
 
     test {
@@ -110,11 +109,6 @@ gradlePlugin {
             id = "net.ltgt.apt-eclipse"
             displayName = "Gradle APT plugin (Eclipse integration)"
             implementationClass = "net.ltgt.gradle.apt.AptEclipsePlugin"
-        }
-        register("aptIdea") {
-            id = "net.ltgt.apt-idea"
-            displayName = "Gradle APT plugin (IDEA integration)"
-            implementationClass = "net.ltgt.gradle.apt.AptIdeaPlugin"
         }
     }
 }
