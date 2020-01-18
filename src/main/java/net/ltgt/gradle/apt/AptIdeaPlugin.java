@@ -43,15 +43,6 @@ public class AptIdeaPlugin implements Plugin<Project> {
   private static final boolean isIdeaImport =
       Boolean.getBoolean("idea.active") && System.getProperty("idea.version") != null;
 
-  private static boolean classExists(String name) {
-    try {
-      Class.forName(name);
-      return true;
-    } catch (ClassNotFoundException e) {
-      return false;
-    }
-  }
-
   @Override
   public void apply(final Project project) {
     project.getPlugins().apply(AptPlugin.class);

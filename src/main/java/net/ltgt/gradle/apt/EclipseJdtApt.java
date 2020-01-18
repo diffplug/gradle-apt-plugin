@@ -33,7 +33,6 @@ public class EclipseJdtApt {
   private final Project project;
   private final PropertiesFileContentMerger file;
 
-  @SuppressWarnings("unchecked")
   public EclipseJdtApt(Project project, PropertiesFileContentMerger file) {
     this.project = project;
     this.file = file;
