@@ -36,6 +36,7 @@ import org.gradle.api.reflect.HasPublicType;
 import org.gradle.api.reflect.TypeOf;
 import org.gradle.api.tasks.GroovySourceSet;
 import org.gradle.api.tasks.Input;
+import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.Optional;
 import org.gradle.api.tasks.SourceSet;
 import org.gradle.api.tasks.SourceSetOutput;
@@ -205,6 +206,7 @@ public class AptPlugin implements Plugin<Project> {
     @Nullable private List<?> processors = new ArrayList<>();
     @Nullable private Map<String, ?> processorArgs = new LinkedHashMap<>();
 
+    @Internal
     @Override
     public TypeOf<?> getPublicType() {
       return TypeOf.typeOf(AptOptions.class);
