@@ -11,5 +11,5 @@ kotlinDslPluginOptions {
 val compileJava by project(":").tasks.existing(JavaCompile::class)
 
 dependencies {
-    compile(files(compileJava.map { it.destinationDir }).builtBy(compileJava))
+    implementation(files(compileJava.map { it.destinationDir }).builtBy(compileJava))
 }
