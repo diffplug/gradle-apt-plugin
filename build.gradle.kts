@@ -6,6 +6,7 @@ import org.gradle.api.tasks.testing.logging.TestExceptionFormat
 plugins {
     `java-gradle-plugin`
     `maven-publish`
+    `eclipse`
     groovy
     id("com.gradle.plugin-publish") version "0.10.0"
     id("com.github.sherter.google-java-format") version "0.8"
